@@ -25,7 +25,6 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/profil/:id' element={<Profile />} />
         <Route path='*' element={<NotFound   />} />
-
       </Routes>
       </ThemeContextProvider>
     </div>
