@@ -6,10 +6,18 @@ import NotFound from './components/NotFound/NotFound';
 import Navbar from './components/Navbar/Navbar';
 import Services from './components/Services/Services';
 import Contact from './components/Contact/Contact';
+import ThemeContextProvider from './Context/ThemeContext';
+
+if(window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches){
+    alert("woh, je suis en dark mode ahah")
+}
 
 function App() {
   return (
     <div className="App">
+      <ThemeContextProvider>
+
+      
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -19,6 +27,7 @@ function App() {
         <Route path='*' element={<NotFound   />} />
 
       </Routes>
+      </ThemeContextProvider>
     </div>
   );
 }
